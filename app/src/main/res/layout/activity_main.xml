@@ -8,18 +8,20 @@
     android:orientation="vertical">
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="e-mail"></EditText>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="senha"></EditText>
-
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:text="Para onde vamos?"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/choose_destino"
+        android:layout_width="239dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
         android:layout_gravity="center"
-        android:text="Entrar"></Button>
+
+        android:text="Escolher destino" />
+
+
 </LinearLayout>

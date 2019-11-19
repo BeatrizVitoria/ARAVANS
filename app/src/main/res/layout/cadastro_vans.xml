@@ -7,29 +7,17 @@
         android:id="@+id/placa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Placa"/>
+        android:hint="Ex.: WKO-300"/>
+    <EditText
+        android:id="@+id/UF_Placa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="AL"/>
     <EditText
         android:id="@+id/nomeMotorista"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nome do Motorista"/>
-    <EditText
-        android:id="@+id/login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Login"/>
-    <EditText
-        android:id="@+id/senha"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:hint="Senha"/>
-    <EditText
-        android:id="@+id/confirmacaoSenha"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:hint="Confirmar Senha"/>
+        android:hint="Ex.:CAMILA DOS SANTOS"/>
     <Button
         android:id="@+id/buttonCadastro"
         android:layout_width="match_parent"

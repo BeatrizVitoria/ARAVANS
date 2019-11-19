@@ -9,16 +9,20 @@
     android:layout_height="wrap_content">
     <EditText
         android:id="@+id/cep"
-        android:layout_width="216dp"
         android:layout_height="wrap_content"
-        android:hint="CEP"
-        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_weight="4"
+        android:inputType="number"
+        android:hint="CEP"/>
 
     <Button
-        android:layout_width="106dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="300dp"
-        android:hint="BUSCAR" />
+        android:inputType="number"
+        android:layout_weight="8"
+        android:hint="BUSCAR"
+        />
+
 </LinearLayout>
 
 

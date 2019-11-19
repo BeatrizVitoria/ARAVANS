@@ -22,11 +22,13 @@
         android:id="@+id/senha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
         android:hint="Senha"/>
     <EditText
         android:id="@+id/confirmacaoSenha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
         android:hint="Confirmar Senha"/>
     <Button
         android:id="@+id/buttonCadastro"

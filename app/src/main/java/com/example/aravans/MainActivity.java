@@ -1,14 +1,12 @@
 package com.example.aravans;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,12 +15,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(b);
         setContentView(R.layout.activity_main);
     }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        if(item.getItemId()== R.id.bt_login){
-            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+       getMenuInflater().inflate(R.menu.activity_menu, menu);
+       return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item){
+
+        if(item.getItemId() == R.id.bt_login){
+            Intent minhaIntent = new Intent(this, LoginActivity.class);
+            startActivity(minhaIntent);
         }
+        if(item.getItemId() == R.id.bt_cadastrar){
+            Intent minhaIntent = new Intent(this, Cadastrar.class);
+            startActivity(minhaIntent);
+        }
+
         return super.onOptionsItemSelected(item);
     }
 

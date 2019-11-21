@@ -7,6 +7,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,6 +17,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle b) {
         super.onCreate(b);
         setContentView(R.layout.activity_main);
+        Button bt_principal = findViewById(R.id.bt_principal);
+        bt_principal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,EscolhaDestino.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        Button bt_cadastro_cliente = findViewById(R.id.bt_cadastro_cliente);
+        bt_cadastro_cliente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            }
+        });
     }
 
     @Override
@@ -29,10 +47,13 @@ public class MainActivity extends AppCompatActivity {
             Intent minhaIntent = new Intent(this, LoginActivity.class);
             startActivity(minhaIntent);
         }
-        if(item.getItemId() == R.id.bt_cadastrar){
-            Intent minhaIntent = new Intent(this, Cadastrar.class);
-            startActivity(minhaIntent);
-        }
+        else if(item.getItemId() == R.id.bt_cadastrar_cliente){
+            Intent intentCliente = new Intent(this, CadastrarCliente.class);
+            startActivity(intentCliente);
+        }else if(item.getItemId() == R.id.bt_cadastrar_motorista){
+                Intent intentMotorista = new Intent(this, CadastrarMotorista.class);
+                startActivity(intentMotorista);
+            }
 
         return super.onOptionsItemSelected(item);
     }

@@ -8,10 +8,11 @@
     android:background="@drawable/mapa_02">
 
 
-    <EditText
+    <Button
+        android:id="@+id/bt_principal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Pra onde vamos?"
+        android:text="Para onde vamos?"
         android:layout_marginBottom="30dp"
         android:layout_margin="40dp"/>
 

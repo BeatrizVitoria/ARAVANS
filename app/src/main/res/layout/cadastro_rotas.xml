@@ -3,30 +3,38 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <EditText
-        android:id="@+id/placa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Ex.: WKO-300"/>
 
     <EditText
-        android:id="@+id/UF_Placa"
+        android:id="@+id/origem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="AL"/>
+        android:hint="Origem" />
 
     <EditText
-        android:id="@+id/responsavel"
+        android:id="@+id/destino"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Ex.:CAMILA DOS SANTOS"/>
+        android:hint="Destino" />
+
+    <EditText
+        android:id="@+id/percurso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Percurso" />
+
+    <EditText
+        android:id="@+id/horario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Horário" />
 
     <Button
-        android:id="@+id/bt_vans"
+        android:id="@+id/bt_rotas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cadastrar"
+        android:hint="Cadastrar"
         android:layout_gravity="center"
-        android:textSize="25dp"/>
+        android:textSize="25dp"
+        />
 
 </LinearLayout>

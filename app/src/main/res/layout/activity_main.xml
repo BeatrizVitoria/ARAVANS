@@ -15,7 +15,6 @@
         android:text="Para onde vamos?"
         android:layout_marginBottom="30dp"
         android:layout_margin="40dp"
-        android:radius ="15dp"
         />
 
 </LinearLayout>

@@ -21,23 +21,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Você é?">
-
-    </TextView>
+        android:text="Você é?"/>
 
     <RadioButton
         android:id="@+id/rd_bt_motorista"
-        android:layout_width="157dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Motorista" />
+        android:text="Motorista"
+        android:textSize="20dp"/>
 
     <RadioButton
         android:id="@+id/rd_bt_cliente"
-        android:layout_width="157dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Cliente" />
+        android:text="Cliente"
+        android:textSize="20dp"/>
 
     <Button
         android:layout_width="wrap_content"

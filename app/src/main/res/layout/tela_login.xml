@@ -25,22 +25,27 @@
 
     </TextView>
 
-    <RadioButton
-        android:id="@+id/rd_bt_motorista"
-        android:layout_width="157dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Motorista" />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <RadioButton
-        android:id="@+id/rd_bt_cliente"
-        android:layout_width="157dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Cliente" />
+        <RadioButton
+            android:id="@+id/rd_bt_motorista"
+            android:layout_width="157dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Motorista" />
+
+        <RadioButton
+            android:id="@+id/rd_bt_cliente"
+            android:layout_width="157dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Cliente" />
+    </RadioGroup>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="ENTRAR" />

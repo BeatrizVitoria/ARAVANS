@@ -26,12 +26,6 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-        Button bt_cadastro_cliente = findViewById(R.id.bt_cadastro_cliente);
-        bt_cadastro_cliente.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            }
-        });
     }
 
     @Override

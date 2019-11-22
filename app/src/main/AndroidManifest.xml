@@ -20,7 +20,7 @@
         <activity android:name=".CadastrarCliente"></activity>
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".CadastrarMotorista"></activity>
-
+        <activity android:name=".EscolhaDestino"></activity>
     </application>
 
 </manifest>

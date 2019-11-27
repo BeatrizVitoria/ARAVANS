@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Login" />
-
+-
     <EditText
         android:id="@+id/editText"
         android:layout_width="match_parent"
@@ -22,23 +22,24 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Você é?"/>
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/rd_bt_motorista"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Motorista"
+            android:textSize="20dp"/>
 
-    <RadioButton
-        android:id="@+id/rd_bt_motorista"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Motorista"
-        android:textSize="20dp"/>
-
-    <RadioButton
-        android:id="@+id/rd_bt_cliente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Cliente"
-        android:textSize="20dp"/>
-
+        <RadioButton
+            android:id="@+id/rd_bt_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Cliente"
+            android:textSize="20dp"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

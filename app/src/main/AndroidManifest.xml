@@ -4,9 +4,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo"
         android:label="ARAVANS"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
@@ -16,10 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DestinoActivity"></activity>
-        <activity android:name=".Cadastrar"></activity>
-        <activity android:name=".LoginActivity"></activity>
 
+        <activity android:name=".ListaRotas"></activity>
+        <activity android:name=".CadastroVan"></activity>
 
     </application>
 

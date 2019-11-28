@@ -16,12 +16,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle b) {
         super.onCreate(b);
         setContentView(R.layout.activity_main);
-        Button bt_destino = findViewById(R.id.bt_destino);
-        bt_destino.setOnClickListener(new View.OnClickListener() {
+
+        Button bt_principal = findViewById(R.id.bt_principal);
+        bt_principal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, DestinoActivity.class);
+                Intent intent = new Intent(MainActivity.this,EscolhaDestino.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
@@ -39,17 +41,15 @@ public class MainActivity extends AppCompatActivity {
             Intent minhaIntent = new Intent(this, LoginActivity.class);
             startActivity(minhaIntent);
         }
-        else if(item.getItemId() == R.id.bt_cadastrarCliente){
-            Intent minhaIntent = new Intent(this, Cadastrar.class);
-            startActivity(minhaIntent);
-        }else{
-                Intent minhaInt = new Intent(this, Cadastrar.class);
-                startActivity(minhaInt);
+        else if(item.getItemId() == R.id.bt_cadastrar_cliente){
+            Intent intentCliente = new Intent(this, CadastrarCliente.class);
+            startActivity(intentCliente);
+        }else if(item.getItemId() == R.id.bt_cadastrar_motorista){
+                Intent intentMotorista = new Intent(this, CadastrarMotorista.class);
+                startActivity(intentMotorista);
             }
-            return super.onOptionsItemSelected(item);
-        }
 
-
+        return super.onOptionsItemSelected(item);
     }
 
-
+}

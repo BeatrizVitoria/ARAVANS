@@ -2,13 +2,11 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/bt_cadastrar_cliente"
+        android:id="@+id/bt_cadastrarCiente"
         android:title="Cadastrar Cliente" />
-
     <item
-        android:id="@+id/bt_cadastrar_motorista"
+        android:id="@+id/bt_cadastrarMotorista"
         android:title="Cadastrar Motorista" />
-
     <item
         android:id="@+id/bt_login"
         android:title="Login" />

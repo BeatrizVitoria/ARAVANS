@@ -9,27 +9,27 @@
         android:layout_height="wrap_content"
         android:text="ORIGEM"
         android:textColor="#FD131212" />
-<LinearLayout
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <EditText
-        android:id="@+id/cep"
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_weight="4"
-        android:inputType="number"
-        android:hint="CEP"/>
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/cep"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:inputType="number"
+            android:hint="CEP"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:layout_weight="8"
-        android:hint="BUSCAR"
-        />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:layout_weight="8"
+            android:hint="BUSCAR"
+            />
 
-</LinearLayout>
+    </LinearLayout>
 
 
     <EditText
@@ -97,6 +97,6 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="VER NO MAPA"/>
+        android:text="VER ROTAS"/>
 
 </LinearLayout>

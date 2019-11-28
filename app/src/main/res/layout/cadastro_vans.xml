@@ -8,24 +8,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Ex.: WKO-300"/>
-
     <EditText
         android:id="@+id/UF_Placa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="AL"/>
-
     <EditText
-        android:id="@+id/responsavel"
+        android:id="@+id/nomeMotorista"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Ex.:CAMILA DOS SANTOS"/>
-
     <Button
-        android:id="@+id/bt_vans"
-        android:layout_width="wrap_content"
+        android:id="@+id/buttonCadastro"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CADASTRAR"
-        android:layout_gravity="center"/>
-
+        android:text="Cadastrar Van"/>
 </LinearLayout>

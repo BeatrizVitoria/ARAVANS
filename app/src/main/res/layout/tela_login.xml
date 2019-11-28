@@ -5,13 +5,13 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/login"
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Login" />
--
+
     <EditText
-        android:id="@+id/senha"
+        android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Senha"
@@ -20,53 +20,28 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Você é?"
+        android:layout_gravity="center">
+
+    </TextView>
+
+    <RadioButton
+        android:id="@+id/rd_bt_motorista"
+        android:layout_width="142dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Você é?"/>
-<<<<<<< HEAD
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-        <RadioButton
-            android:id="@+id/rd_bt_motorista"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Motorista"
-            android:textSize="20dp"/>
+        android:text="Motorista" />
 
-        <RadioButton
-            android:id="@+id/rd_bt_cliente"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Cliente"
-            android:textSize="20dp"/>
-=======
+    <RadioButton
+        android:id="@+id/rd_bt_cliente"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Cliente" />
 
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <RadioButton
-            android:id="@+id/rd_bt_motorista"
-            android:layout_width="157dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Motorista" />
-
-        <RadioButton
-            android:id="@+id/rd_bt_cliente"
-            android:layout_width="157dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Cliente" />
-    </RadioGroup>
-
-
->>>>>>> 5d5394d94a928624257700a8031bc210b98fc6ec
     <Button
-        android:id="@+id/bt_entrar"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="ENTRAR" />

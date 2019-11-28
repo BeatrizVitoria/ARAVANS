@@ -89,7 +89,6 @@ public class Vans implements Serializable {
     @Override
     public String toString() {
         return "Vans{" +
-                "foto='" + foto + '\'' +
                 ", placa='" + placa + '\'' +
                 ", UfPlaca='" + ufPlaca + '\'' +
                 ", responsavel='" + responsavel + '\'' +

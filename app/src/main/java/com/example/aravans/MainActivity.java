@@ -8,7 +8,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.Button;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,12 +19,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle b) {
         super.onCreate(b);
         setContentView(R.layout.activity_main);
-
-        Button bt_principal = findViewById(R.id.bt_principal);
-        bt_principal.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fbPrincipal = findViewById(R.id.fb_principal);
+        fbPrincipal.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,EscolhaDestino.class);
+                Intent intent = new Intent(MainActivity.this, ListaRotas.class);
                 startActivity(intent);
                 finish();
             }
@@ -33,22 +35,15 @@ public class MainActivity extends AppCompatActivity {
        getMenuInflater().inflate(R.menu.activity_menu, menu);
        return super.onCreateOptionsMenu(menu);
     }
-
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item){
-
-        if(item.getItemId() == R.id.bt_login){
-            Intent minhaIntent = new Intent(this, LoginActivity.class);
-            startActivity(minhaIntent);
+    public boolean onOptionsItemSelected(MenuItem item){
+        if(item.getItemId()== R.id.bt_cadastrar_van){
+            Intent intent = new Intent(MainActivity.this, CadastroVan.class);
+            startActivity(intent);
+            finish();
+        }else{
+            //parte da ligação.
         }
-        else if(item.getItemId() == R.id.bt_cadastrar_cliente){
-            Intent intentCliente = new Intent(this, CadastrarCliente.class);
-            startActivity(intentCliente);
-        }else if(item.getItemId() == R.id.bt_cadastrar_motorista){
-                Intent intentMotorista = new Intent(this, CadastrarMotorista.class);
-                startActivity(intentMotorista);
-            }
-
         return super.onOptionsItemSelected(item);
     }
 

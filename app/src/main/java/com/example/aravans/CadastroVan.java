@@ -13,11 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class CadastroVan extends AppCompatActivity {
 
-    private String caminhoFoto;
-    public static final int REQUEST_CODE_CAMERA = 123;
-
     @Override
-    protected void onCreate(Bundle meuBundle){
+    protected void onCreate(Bundle meuBundle) {
         super.onCreate(meuBundle);
         setContentView(R.layout.cadastro_vans);
 
@@ -26,32 +23,28 @@ public class CadastroVan extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = getIntent();
-                if (intent.hasExtra("contato")){
                     //RECUPERAR OS EDITTEXTS
-                EditText etPlaca = findViewById(R.id.placa);
-                EditText etUfPlaca = findViewById(R.id.UF_Placa);
-                EditText etResponsavel = findViewById(R.id.responsavel);
-                EditText etOrigem = findViewById(R.id.origem);
-                EditText etDestino = findViewById(R.id.destino);
-                EditText etPercurso = findViewById(R.id.percurso);
-                EditText etHorario = findViewById(R.id.horario);
+                    EditText etPlaca = findViewById(R.id.placa);
+                    EditText etUfPlaca = findViewById(R.id.UF_Placa);
+                    EditText etResponsavel = findViewById(R.id.responsavel);
+                    EditText etOrigem = findViewById(R.id.origem);
+                    EditText etDestino = findViewById(R.id.destino);
+                    EditText etPercurso = findViewById(R.id.percurso);
+                    EditText etHorario = findViewById(R.id.horario);
 
-                //RECUPERA O TEXTO
-                Vans vans = (Vans) intent.getSerializableExtra("vans");
-                String placa = etPlaca.getText().toString();
-                String ufPlaca = etUfPlaca.getText().toString();
-                String responsavel = etResponsavel.getText().toString();
-                String origem = etOrigem.getText().toString();
-                String destino = etDestino.getText().toString();
-                String percurso = etPercurso.getText().toString();
-                String horario = etHorario.getText().toString();
-                String foto = imageFoto.getTag().toString();
+                    //RECUPERA O TEXTO
 
-                VansBD dao = new VansBD(CadastroVan.this);
-                Toast.makeText(getApplicationContext(),"Cadastrado!!", Toast.LENGTH_SHORT).show();
-            }
+                    String placa = etPlaca.getText().toString();
+                    String ufPlaca = etUfPlaca.getText().toString();
+                    String responsavel = etResponsavel.getText().toString();
+                    String origem = etOrigem.getText().toString();
+                    String destino = etDestino.getText().toString();
+                    String percurso = etPercurso.getText().toString();
+                    String horario = etHorario.getText().toString();
+                    //falta recuperar o da foto
+
+                    Toast.makeText(getApplicationContext(), "Cadastrado!!", Toast.LENGTH_SHORT).show();
+                }
         });
     }
-}
 }

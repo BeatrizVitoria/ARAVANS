@@ -2,7 +2,10 @@ package com.example.aravans;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -25,6 +28,22 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
         mapFragment.getMapAsync(this);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.activity_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        if(item.getItemId()== R.id.bt_cadastrar_van){
+            Intent intent = new Intent(RotasActivity.this, CadastroVan.class);
+            startActivity(intent);
+            finish();
+        }else{
+            //parte da ligação.
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     /**
      * Manipulates the map once available.

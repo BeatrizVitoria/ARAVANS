@@ -39,11 +39,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:label="AraVans">
-
-        </activity>
         <activity android:name=".ListaRotas" />
         <activity android:name=".CadastroVan" />
     </application>

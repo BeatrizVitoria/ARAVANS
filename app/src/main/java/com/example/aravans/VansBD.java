@@ -55,28 +55,19 @@ public class VansBD extends SQLiteOpenHelper {
 
         String[] argumentos = { String.valueOf(vans.getCodigo()) };
 
-        db().update("CONTATOS", values, "codigo=?", argumentos);
+        db().update("VANS", values, "codigo=?", argumentos);
     }
 
     public void deletar(int codigo) {
         String[] argumentos = { String.valueOf(codigo) };
 
-        db().delete("CONTATOS", "codigo=?", argumentos);
+        db().delete("VANS", "codigo=?", argumentos);
     }
 
     public ArrayList<Vans> recuperarTodos() {
         ArrayList<Vans> vans = new ArrayList<>();
 
         try {
-
-            /*              0        1          2              3
-             * indice  -----------------------------------------------
-             *    -1   | codigo |  nome   |  telefone   |  endereco  |
-             *     0   |    1   |   aaa   |   88888     |   R. A. B. |
-             *     1   |    2   |   bbb   |   99999     |   R. B. A. |
-             *         -----------------------------------------------
-             *    -> linha -> valor -> coluna
-             */
 
             Cursor cursor = db().rawQuery("SELECT * FROM VANS", null);
 

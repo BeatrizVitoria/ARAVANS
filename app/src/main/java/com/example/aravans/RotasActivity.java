@@ -3,6 +3,9 @@ package com.example.aravans;
 import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,6 +22,9 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
 
     private GoogleMap mMap;
 
+    /*private SQLiteDatabase conexao;
+    private VansBD vansBD;*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +34,17 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }
+
+    /*@Override
+    public void criarConexao{
+
+        try{
+
+        } catch(SQLiteException e){
+
+        }
+    }*/
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -67,6 +84,6 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
 
     @Override
     public void onMapClick(LatLng latLng) {
-        Toast.makeText( getContext(), "Coordenadas: " + latLng.toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText( this, "Coordenadas: " + latLng.toString(), Toast.LENGTH_SHORT).show();
     }
 }

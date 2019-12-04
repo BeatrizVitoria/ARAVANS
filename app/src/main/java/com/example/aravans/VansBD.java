@@ -16,7 +16,7 @@ public class VansBD extends SQLiteOpenHelper {
     }
 
     public void onCreate(SQLiteDatabase banco) {
-        banco.execSQL("CREATE TABLE VANS(codigo integer primary key autoincrement, foto varchar(500), placa varchar(18), ufPlaca varchar(4), responsavel varchar(60), origem varchar(65), destino varchar(65), percurso varchar(65), horario varchar(10));");
+        banco.execSQL("CREATE TABLE VANS(codigo integer primary key autoincrement, foto varchar(500), placa varchar(15), ufPlaca varchar(4), responsavel varchar(60), origem varchar(65), destino varchar(65), percurso varchar(200), horario varchar(10));");
     }
 
     public void onUpgrade(SQLiteDatabase banco, int versaoAntiga, int versaoNova) {
@@ -28,6 +28,7 @@ public class VansBD extends SQLiteOpenHelper {
         // Chave -> valor
         ContentValues values = new ContentValues();
 
+        values.put("codigo", vans.getCodigo());
         values.put("foto", vans.getFoto());
         values.put("placa", vans.getPlaca());
         values.put("ufPlaca", vans.getUfPlaca());
@@ -76,13 +77,13 @@ public class VansBD extends SQLiteOpenHelper {
                         cursor.getInt(cursor.getColumnIndex("codigo")),
                         cursor.getString(cursor.getColumnIndex("foto")),
                         cursor.getString(cursor.getColumnIndex("placa")),
-                        cursor.getString(cursor.getColumnIndex("ufplaca")),
+                        cursor.getString(cursor.getColumnIndex("ufPlaca")),
                         cursor.getString(cursor.getColumnIndex("responsavel")),
                         cursor.getString(cursor.getColumnIndex("origem")),
                         cursor.getString(cursor.getColumnIndex("destino")),
                         cursor.getString(cursor.getColumnIndex("percurso")),
                         cursor.getString(cursor.getColumnIndex("horario"))
-                ));
+                        ));
             }
         } catch (SQLiteException e) {
         }

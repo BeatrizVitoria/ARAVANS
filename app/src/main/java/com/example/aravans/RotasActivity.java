@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -17,6 +18,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class RotasActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMapClickListener {
 
@@ -29,6 +31,15 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rotas);
+        FloatingActionButton fButton = findViewById(R.id.fb_principal);
+        fButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RotasActivity.this, ListaRotas.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -53,6 +64,7 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
+
         if(item.getItemId()== R.id.bt_cadastrar_van){
             Intent intent = new Intent(RotasActivity.this, CadastroVan.class);
             startActivity(intent);
@@ -84,6 +96,10 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
 
     @Override
     public void onMapClick(LatLng latLng) {
+<<<<<<< HEAD
         Toast.makeText( this, "Coordenadas: " + latLng.toString(), Toast.LENGTH_SHORT).show();
+=======
+        Toast.makeText(this, "Coordenadas: " + latLng.toString(), Toast.LENGTH_SHORT).show();
+>>>>>>> d15306316756a5f557957b267ef0717e66244e34
     }
 }

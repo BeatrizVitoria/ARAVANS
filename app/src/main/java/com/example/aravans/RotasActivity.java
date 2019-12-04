@@ -67,6 +67,6 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
 
     @Override
     public void onMapClick(LatLng latLng) {
-        Toast.makeText( getContext(), "Coordenadas: " + latLng.toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Coordenadas: " + latLng.toString(), Toast.LENGTH_SHORT).show();
     }
 }

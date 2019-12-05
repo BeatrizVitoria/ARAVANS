@@ -13,7 +13,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class CadastroVan extends AppCompatActivity {
 
-    private Vans VansBD;
+    /*private EditText placa;
+    private EditText ufPlaca;
+    private EditText responsavel;
+    private EditText origem;
+    private EditText destino;
+    private EditText percurso;
+    private EditText horario;*/
+
+    private VansBD vansBD;
+
     @Override
     protected void onCreate(Bundle meuBundle) {
         super.onCreate(meuBundle);
@@ -43,6 +52,8 @@ public class CadastroVan extends AppCompatActivity {
                     String percurso = etPercurso.getText().toString();
                     String horario = etHorario.getText().toString();
                     //falta recuperar o da foto
+
+            //    vansBD = new VansBD(this);
 
                     Vans van = new Vans(0, "", placa, ufPlaca, responsavel, origem, destino, percurso, horario);
 

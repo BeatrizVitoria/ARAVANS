@@ -18,10 +18,11 @@ public class VansBD {
 
     public void adicionar(Vans vans) {
         SQLiteDatabase db = conn.getWritableDatabase();
+
         ContentValues dados = preencherDados(vans);
 
-        db.insert("VANS", null, dados);
-        db.close();
+       db.insert("VANS", null, dados);
+       db.close();
     }
 
 

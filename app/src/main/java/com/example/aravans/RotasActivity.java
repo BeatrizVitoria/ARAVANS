@@ -1,11 +1,18 @@
 package com.example.aravans;
 
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
+import android.Manifest;
 import android.content.Intent;
+<<<<<<< HEAD
+import android.content.pm.PackageManager;
+import android.net.Uri;
+=======
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+>>>>>>> e9e68509237fcc82d067df7e9c58763fd4339f88
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,6 +27,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import static android.content.pm.PackageManager.*;
+
 public class RotasActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMapClickListener {
 
     private GoogleMap mMap;
@@ -28,6 +37,7 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cadastro_vans);
+<<<<<<< HEAD
         FloatingActionButton fButton = findViewById(R.id.fb_principal);
         fButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,28 +47,44 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
                 finish();
             }
         });
+=======
+
+>>>>>>> 77f249ebc456694aeec86a82151dc0c047161cc2
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+        //mapFragment.getMapAsync(this);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
+        //inflar o menu na tela
         getMenuInflater().inflate(R.menu.activity_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
-
+        //quando o item clicado for o do botão cadastrar
         if(item.getItemId()== R.id.bt_cadastrar_van){
+            //direcionado para a tela CadastroVan
             Intent intent = new Intent(RotasActivity.this, CadastroVan.class);
             startActivity(intent);
             finish();
-        }else{
+        }else if(ActivityCompat.checkSelfPermission(RotasActivity.this, Manifest.permission.CALL_PHONE != PERMISSION_GRANTED)){
             //parte da ligação.
+            String[] permissions ={Manifest.permission.CALL_PHONE};
+            ActivityCompat.requestPermissions(this, permissions, 35212202);
         }
         return super.onOptionsItemSelected(item);
+    }
+    @Override
+    public void onRequestPermissionResult(int requestCode, String[]permissions, int[] grantResults){
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(permissions[0].equals(Manifest.permission.CALL_PHONE)&& grantResults[0]==0){
+            if(ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE)== PERMISSION_GRANTED){
+                Intent intent = new Intent(Intent.ACTION_CALL);
+            }
+        }
     }
 
     /**

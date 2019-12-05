@@ -7,7 +7,6 @@ import java.io.Serializable;
 
 public class Vans implements Serializable {
 
-    private int codigo;
     private String foto;
     private String placa;
     private String ufPlaca;
@@ -17,8 +16,7 @@ public class Vans implements Serializable {
     private String percurso;
     private String horario;
 
-    public Vans(int codigo, String foto,String placa, String ufPlaca, String responsavel, String origem, String destino, String percurso, String horario) {
-        this.codigo = codigo;
+    public Vans(String foto,String placa, String ufPlaca, String responsavel, String origem, String destino, String percurso, String horario) {
         this.foto = foto;
         this.placa = placa;
         this.ufPlaca = ufPlaca;
@@ -27,14 +25,6 @@ public class Vans implements Serializable {
         this.destino = destino;
         this.percurso = percurso;
         this.horario = horario;
-    }
-
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
     }
 
     public String getFoto() {

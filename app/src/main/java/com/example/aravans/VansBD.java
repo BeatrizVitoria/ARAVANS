@@ -22,7 +22,6 @@ public class VansBD {
 
         ContentValues dados = new ContentValues();
 
-        dados.put("CODIGO", vans.getCodigo());
         dados.put("FOTO", vans.getFoto());
         dados.put("PLACA", vans.getPlaca());
         dados.put("UFPLACA", vans.getUfPlaca());
@@ -40,7 +39,7 @@ public class VansBD {
 
         SQLiteDatabase db = conn.getWritableDatabase();
         ContentValues dados = preencherDados(vans);
-        String[] parametro = {String.valueOf(vans.getCodigo())};
+        String[] parametro = {String.valueOf(vans.getPlaca())};
 
         db.update("VANS", dados, "codigo = ?", parametro);
         db.close();
@@ -48,7 +47,7 @@ public class VansBD {
 
     public void deletar(Vans vans) {
         SQLiteDatabase db = conn.getWritableDatabase();
-        String[] parametro = {String.valueOf(vans.getCodigo())};
+        String[] parametro = {String.valueOf(vans.getPlaca())};
 
         db.delete("VANS", "codigo = ?", parametro);
         db.close();

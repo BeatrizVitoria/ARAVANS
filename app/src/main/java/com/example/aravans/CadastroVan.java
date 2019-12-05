@@ -43,6 +43,11 @@ public class CadastroVan extends AppCompatActivity {
                     String horario = etHorario.getText().toString();
                     //falta recuperar o da foto
 
+                    Vans van = new Vans(0, "", placa, ufPlaca, responsavel, origem,
+                            destino, percurso, horario);
+
+                    new VansBD(CadastroVan.this).adicionar(van);
+
                     Toast.makeText(getApplicationContext(), "Cadastrado!!", Toast.LENGTH_SHORT).show();
                 }
         });

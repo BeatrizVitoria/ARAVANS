@@ -24,13 +24,10 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
 
     private GoogleMap mMap;
 
-    /*private SQLiteDatabase conexao;
-    private VansBD vansBD;*/
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rotas);
+        setContentView(R.layout.cadastro_vans);
         FloatingActionButton fButton = findViewById(R.id.fb_principal);
         fButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,17 +42,6 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }
-
-    /*@Override
-    public void criarConexao{
-
-        try{
-
-        } catch(SQLiteException e){
-
-        }
-    }*/
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -96,10 +82,10 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
 
     @Override
     public void onMapClick(LatLng latLng) {
-<<<<<<< HEAD
+
         Toast.makeText( this, "Coordenadas: " + latLng.toString(), Toast.LENGTH_SHORT).show();
-=======
+
         Toast.makeText(this, "Coordenadas: " + latLng.toString(), Toast.LENGTH_SHORT).show();
->>>>>>> d15306316756a5f557957b267ef0717e66244e34
+
     }
 }

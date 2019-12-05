@@ -25,7 +25,7 @@ public class VansBD extends SQLiteOpenHelper {
     }
 
     public ContentValues obterDados(Vans vans) {
-        // Chave -> valor
+
         ContentValues values = new ContentValues();
 
         values.put("codigo", vans.getCodigo());

@@ -18,6 +18,15 @@ public class VansBD {
         banco = conn.getWritableDatabase();
     }
 
+
+    public void adicionar(Vans vans) {
+        SQLiteDatabase db = conn.getWritableDatabase();
+
+        ContentValues dados = preencherDados(vans);
+
+       db.insert("VANS", null, dados);
+       db.close();
+
     public long inserir(Vans vans) {
 
         ContentValues dados = new ContentValues();
@@ -31,7 +40,6 @@ public class VansBD {
         dados.put("PERCURSO", vans.getPercurso());
         dados.put("HORARIO", vans.getHorario());
         return banco.insert("vans",null, dados);
-
     }
 
 

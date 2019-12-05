@@ -45,7 +45,10 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
                 finish();
             }
         });
+<<<<<<< HEAD
 
+=======
+>>>>>>> 25e4fa768f863c9e9d10c8cb7a272b0314608835
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -90,9 +93,15 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
         return super.onOptionsItemSelected(item);
     }
 
+<<<<<<< HEAD
 
     public void onRequestPermissionResult(int requestCode, @NonNull String[] permissions,
                                           @NonNull int[] grantResults) {
+=======
+    public void onRequestPermissionResult(int requestCode, String[]permissions, int[] grantResults){
+
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+>>>>>>> 25e4fa768f863c9e9d10c8cb7a272b0314608835
 
             if (permissions[0].equals(Manifest.permission.CALL_PHONE) && grantResults[0] == 0) {
                 if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE)

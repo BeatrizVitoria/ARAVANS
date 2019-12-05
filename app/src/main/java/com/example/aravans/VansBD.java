@@ -4,90 +4,86 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteException;
-import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
 
-public class VansBD extends SQLiteOpenHelper {
+public class VansBD {
+
+    private Conexao conn;
+    private String TABLE = "VANS";
 
     public VansBD(Context context) {
-        super(context, "banco_de_dados", null, 1);
-    }
-
-    public void onCreate(SQLiteDatabase banco) {
-        banco.execSQL("CREATE TABLE VANS(codigo integer primary key autoincrement, foto varchar(500), placa varchar(15), ufPlaca varchar(4), responsavel varchar(60), origem varchar(65), destino varchar(65), percurso varchar(200), horario varchar(10));");
-    }
-
-    public void onUpgrade(SQLiteDatabase banco, int versaoAntiga, int versaoNova) {
-        banco.execSQL("DROP TABLE VANS");
-        this.onCreate(banco);
-    }
-
-    public ContentValues obterDados(Vans vans) {
-
-        ContentValues values = new ContentValues();
-
-        values.put("codigo", vans.getCodigo());
-        values.put("foto", vans.getFoto());
-        values.put("placa", vans.getPlaca());
-        values.put("ufPlaca", vans.getUfPlaca());
-        values.put("responsavel", vans.getResponsavel());
-        values.put("origem", vans.getOrigem());
-        values.put("destino", vans.getDestino());
-        values.put("percurso", vans.getPercurso());
-        values.put("horario", vans.getHorario());
-
-        return values;
-    }
-
-    public SQLiteDatabase db() {
-        return getWritableDatabase();
+        conn = new Conexao(context);
     }
 
     public void adicionar(Vans vans) {
-        ContentValues values = obterDados(vans);
+        SQLiteDatabase db = conn.getWritableDatabase();
+        ContentValues dados = preencherDados(vans);
 
-        db().insert("VANS", null, values);
+        db.insert("VANS", null, dados);
+        db.close();
     }
 
     public void atualizar(Vans vans) {
-        ContentValues values = obterDados(vans);
 
-        String[] argumentos = { String.valueOf(vans.getCodigo()) };
+        SQLiteDatabase db = conn.getWritableDatabase();
+        ContentValues dados = preencherDados(vans);
+        String[] parametro = {String.valueOf(vans.getCodigo())};
 
-        db().update("VANS", values, "codigo=?", argumentos);
+        db.update("VANS", dados, "codigo = ?", parametro);
+        db.close();
     }
 
-    public void deletar(int codigo) {
-        String[] argumentos = { String.valueOf(codigo) };
+    public void deletar(Vans vans) {
+        SQLiteDatabase db = conn.getWritableDatabase();
+        String[] parametro = {String.valueOf(vans.getCodigo())};
 
-        db().delete("VANS", "codigo=?", argumentos);
+        db.delete("VANS", "codigo = ?", parametro);
+        db.close();
     }
 
-    public ArrayList<Vans> recuperarTodos() {
-        ArrayList<Vans> vans = new ArrayList<>();
+    public ArrayList<Vans> recuperarTudo() {
+        ArrayList<Vans> list = new ArrayList<>();
 
-        try {
+        String sql = "SELECT * FROM VANS;";
+        SQLiteDatabase db = conn.getWritableDatabase();
 
-            Cursor cursor = db().rawQuery("SELECT * FROM VANS", null);
+        Cursor cursor = db.rawQuery(sql, null);
 
-            while (cursor.moveToNext()) {
-                vans.add(new Vans(
-                        cursor.getInt(cursor.getColumnIndex("codigo")),
-                        cursor.getString(cursor.getColumnIndex("foto")),
-                        cursor.getString(cursor.getColumnIndex("placa")),
-                        cursor.getString(cursor.getColumnIndex("ufPlaca")),
-                        cursor.getString(cursor.getColumnIndex("responsavel")),
-                        cursor.getString(cursor.getColumnIndex("origem")),
-                        cursor.getString(cursor.getColumnIndex("destino")),
-                        cursor.getString(cursor.getColumnIndex("percurso")),
-                        cursor.getString(cursor.getColumnIndex("horario"))
-                        ));
-            }
-        } catch (SQLiteException e) {
+        while (cursor.moveToNext()) {
+            int codigo = cursor.getInt(cursor.getColumnIndex("CODIGO"));
+            String foto = cursor.getString(cursor.getColumnIndex("FOTO"));
+            String placa = cursor.getString(cursor.getColumnIndex("PLACA"));
+            String ufPlaca = cursor.getString(cursor.getColumnIndex("UFPLACA"));
+            String responsavel = cursor.getString(cursor.getColumnIndex("RESPONSAVEL"));
+            String origem = cursor.getString(cursor.getColumnIndex("ORIGEM"));
+            String destino = cursor.getString(cursor.getColumnIndex("DESTINO"));
+            String percurso = cursor.getString(cursor.getColumnIndex("PERCURSO"));
+            String horario = cursor.getString(cursor.getColumnIndex("HORARIO"));
+
+            list.add(new Vans(codigo, foto, placa, ufPlaca, responsavel, origem, destino, percurso, horario));
         }
+        cursor.close();
+        db.close();
 
-        return vans;
+        return list;
     }
+
+    private ContentValues preencherDados(Vans vans) {
+
+        ContentValues dados = new ContentValues();
+
+        dados.put("CODIGO", vans.getCodigo());
+        dados.put("FOTO", vans.getFoto());
+        dados.put("PLACA", vans.getPlaca());
+        dados.put("UFPLACA", vans.getUfPlaca());
+        dados.put("RESPONSAVEL", vans.getResponsavel());
+        dados.put("ORIGEM", vans.getOrigem());
+        dados.put("DESTINO", vans.getDestino());
+        dados.put("PERCURSO", vans.getPercurso());
+        dados.put("HORARIO", vans.getHorario());
+
+        return dados;
+    }
+
 }

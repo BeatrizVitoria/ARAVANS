@@ -31,9 +31,6 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
 
     private GoogleMap mMap;
 
-    /*private SQLiteDatabase conexao;
-    private VansBD vansBD;*/
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,19 +39,8 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+        //mapFragment.getMapAsync(this);
     }
-
-    /*@Override
-    public void criarConexao{
-
-        try{
-
-        } catch(SQLiteException e){
-
-        }
-    }*/
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -91,7 +77,8 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
             if (permissions[0].equals(Manifest.permission.CALL_PHONE) && grantResults[0] == 0) {
-                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE)
+                        == PackageManager.PERMISSION_GRANTED) {
                     Intent intent = new Intent(Intent.ACTION_CALL);
                     intent.setData(Uri.parse("tel:3521-2202"));
                     startActivity(intent);
@@ -122,6 +109,6 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
     public void onMapClick(LatLng latLng) {
 
         Toast.makeText( this, "Coordenadas: " + latLng.toString(), Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "Coordenadas: " + latLng.toString(), Toast.LENGTH_SHORT).show();
+
     }
 }

@@ -1,5 +1,6 @@
 package com.example.aravans;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
@@ -7,7 +8,10 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+<<<<<<< HEAD
 
+=======
+>>>>>>> d40bc044c2e0b0825e61eccec9a772a2ec06d51e
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -35,6 +39,7 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rotas);
+<<<<<<< HEAD
 
         FloatingActionButton fButton = findViewById(R.id.fb_principal);
         fButton.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +50,8 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
                 finish();
             }
         });
+=======
+>>>>>>> d40bc044c2e0b0825e61eccec9a772a2ec06d51e
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -67,21 +74,44 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
             Intent intent = new Intent(RotasActivity.this, CadastroVan.class);
             startActivity(intent);
             finish();
+<<<<<<< HEAD
         } else if (ActivityCompat.checkSelfPermission(RotasActivity.this, Manifest.permission.CALL_PHONE) != PERMISSION_GRANTED) {
             //parte da ligação.
             String[] permissions = {Manifest.permission.CALL_PHONE};
             ActivityCompat.requestPermissions(this, permissions, 35212202);
+=======
+        } else if (item.getItemId() == R.id.bt_ligar) {
+
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) == PERMISSION_GRANTED) {
+                //parte da ligação.
+                String[] permissions = {Manifest.permission.CALL_PHONE};
+                ActivityCompat.requestPermissions(this, permissions, 123);
+            } else {
+                Intent intent = new Intent(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel:3521-2202"));
+                startActivity(intent);
+            }
+>>>>>>> d40bc044c2e0b0825e61eccec9a772a2ec06d51e
         }
         return super.onOptionsItemSelected(item);
     }
 
+<<<<<<< HEAD
     public void onRequestPermissionResult(int requestCode, String[]permissions, int[] grantResults){
+=======
+    public void onRequestPermissionResult(int requestCode, @NonNull String[] permissions,
+                                          @NonNull int[] grantResults) {
+>>>>>>> d40bc044c2e0b0825e61eccec9a772a2ec06d51e
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if(permissions[0].equals(Manifest.permission.CALL_PHONE)&& grantResults[0]==0){
-            if(ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE)== PERMISSION_GRANTED){
-                Intent intent = new Intent(Intent.ACTION_CALL);
+
+            if (permissions[0].equals(Manifest.permission.CALL_PHONE) && grantResults[0] == 0) {
+                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE)
+                        == PackageManager.PERMISSION_GRANTED) {
+                    Intent intent = new Intent(Intent.ACTION_CALL);
+                    intent.setData(Uri.parse("tel:3521-2202"));
+                    startActivity(intent);
+                }
             }
-        }
     }
 
     /**
@@ -107,8 +137,6 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
     public void onMapClick(LatLng latLng) {
 
         Toast.makeText( this, "Coordenadas: " + latLng.toString(), Toast.LENGTH_SHORT).show();
-
-        Toast.makeText(this, "Coordenadas: " + latLng.toString(), Toast.LENGTH_SHORT).show();
 
     }
 }

@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class CadastroVan extends AppCompatActivity {
 
+    private Vans VansBD;
     @Override
     protected void onCreate(Bundle meuBundle) {
         super.onCreate(meuBundle);

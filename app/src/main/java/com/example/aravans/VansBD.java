@@ -24,6 +24,7 @@ public class VansBD {
         db.close();
     }
 
+
     public void atualizar(Vans vans) {
 
         SQLiteDatabase db = conn.getWritableDatabase();

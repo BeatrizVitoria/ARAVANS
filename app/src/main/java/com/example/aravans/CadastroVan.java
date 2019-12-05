@@ -44,7 +44,7 @@ public class CadastroVan extends AppCompatActivity {
     }
         public void Salvar (View view){
             Vans van = new Vans(0, "2", Placa, UfPlaca, Responsavel, Origem, Destino, Percurso, Horario);
-            van.setCodigo(Codigo.getText().toString());
+            van.setCodigo(Codigo.getInt().toString());
             van.setFoto(Foto.getText().toString());
             van.setPlaca(Placa.getText().toString());
             van.setUfPlaca(UfPlaca.getText().toString());

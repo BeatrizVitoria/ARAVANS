@@ -13,44 +13,48 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class CadastroVan extends AppCompatActivity {
 
-    private Vans VansBD;
+    private com.example.aravans.VansBD VansBD;
+    private int Codigo;
+    private EditText Foto;
+    private EditText Placa;
+    private EditText UfPlaca;
+    private EditText Responsavel;
+    private EditText Origem;
+    private EditText Destino;
+    private EditText Percurso;
+    private EditText Horario;
+
+
     @Override
     protected void onCreate(Bundle meuBundle) {
         super.onCreate(meuBundle);
         setContentView(R.layout.cadastro_vans);
 
-        Button btVan = findViewById(R.id.bt_cadastrar);
-        btVan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+                //RECUPERAR OS EDITTEXTS
+                Placa = findViewById(R.id.placa);
+                UfPlaca = findViewById(R.id.UF_Placa);
+                Responsavel = findViewById(R.id.responsavel);
+                Origem = findViewById(R.id.origem);
+                Destino = findViewById(R.id.destino);
+                Percurso = findViewById(R.id.percurso);
+                Horario = findViewById(R.id.horario);
+                VansBD = new VansBD(this);
 
-                    //RECUPERAR OS EDITTEXTS
-                    EditText etPlaca = findViewById(R.id.placa);
-                    EditText etUfPlaca = findViewById(R.id.UF_Placa);
-                    EditText etResponsavel = findViewById(R.id.responsavel);
-                    EditText etOrigem = findViewById(R.id.origem);
-                    EditText etDestino = findViewById(R.id.destino);
-                    EditText etPercurso = findViewById(R.id.percurso);
-                    EditText etHorario = findViewById(R.id.horario);
 
-                    //RECUPERA O TEXTO
-
-                    String placa = etPlaca.getText().toString();
-                    String ufPlaca = etUfPlaca.getText().toString();
-                    String responsavel = etResponsavel.getText().toString();
-                    String origem = etOrigem.getText().toString();
-                    String destino = etDestino.getText().toString();
-                    String percurso = etPercurso.getText().toString();
-                    String horario = etHorario.getText().toString();
-                    //falta recuperar o da foto
-
-                    Vans van = new Vans(0, "", placa, ufPlaca, responsavel, origem, destino, percurso, horario);
-
-                    new VansBD(CadastroVan.this).adicionar(van);
-
-                    Toast.makeText(getApplicationContext(), "Cadastrado!!", Toast.LENGTH_SHORT).show();
-
-                }
-        });
     }
+        public void Salvar (View view){
+            Vans van = new Vans(0, "2", Placa, UfPlaca, Responsavel, Origem, Destino, Percurso, Horario);
+            van.setCodigo(Codigo.getText().toString());
+            van.setFoto(Foto.getText().toString());
+            van.setPlaca(Placa.getText().toString());
+            van.setUfPlaca(UfPlaca.getText().toString());
+            van.setResponsavel(Responsavel.getText().toString());
+            van.setOrigem(Origem.getText().toString());
+            van.setDestino(Destino.getText().toString());
+            van.setPercurso(Percurso.getText().toString());
+            van.setHorario(Horario.getText().toString());
+            long id = VansBD.inserir(vans);
+
+        }
+
 }

@@ -1,5 +1,7 @@
 package com.example.aravans;
 
+import android.widget.EditText;
+
 import java.io.Serializable;
 
 
@@ -15,7 +17,7 @@ public class Vans implements Serializable {
     private String percurso;
     private String horario;
 
-    public Vans(int codigo, String foto, String placa, String ufPlaca, String responsavel, String origem, String destino, String percurso, String horario) {
+    public Vans(int codigo, String foto, EditText placa, EditText ufPlaca, EditText responsavel, EditText origem, EditText destino, EditText percurso, EditText horario) {
         this.codigo = codigo;
         this.foto = foto;
         this.placa = placa;

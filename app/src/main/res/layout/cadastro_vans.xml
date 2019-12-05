@@ -64,11 +64,12 @@
             android:hint="HORARIO DE PARTIDA"
             android:inputType="time" />
 
-        <Button
-            android:id="@+id/bt_cadastrar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="CADASTRAR" />
+    <Button
+        android:id="@+id/bt_cadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:onClick="Salvar"
+        android:text="CADASTRAR" />
 
 </LinearLayout>

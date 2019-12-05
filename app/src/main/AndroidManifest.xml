@@ -16,7 +16,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/logo"
         android:label="ARAVANS"
-        android:roundIcon="@mipmap/logo_round"
+        android:roundIcon="@mipmap/icon_vans_foreground"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light"
         tools:ignore="GoogleAppIndexingWarning">

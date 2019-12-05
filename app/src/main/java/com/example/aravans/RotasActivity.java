@@ -5,8 +5,14 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
 import android.content.Intent;
+<<<<<<< HEAD
 import android.content.pm.PackageManager;
 import android.net.Uri;
+=======
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
+import android.database.sqlite.SQLiteOpenHelper;
+>>>>>>> e9e68509237fcc82d067df7e9c58763fd4339f88
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,6 +33,9 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
 
     private GoogleMap mMap;
 
+    /*private SQLiteDatabase conexao;
+    private VansBD vansBD;*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +46,17 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
                 .findFragmentById(R.id.map);
         //mapFragment.getMapAsync(this);
     }
+
+    /*@Override
+    public void criarConexao{
+
+        try{
+
+        } catch(SQLiteException e){
+
+        }
+    }*/
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -90,6 +110,10 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
 
     @Override
     public void onMapClick(LatLng latLng) {
+<<<<<<< HEAD
+        Toast.makeText( this, "Coordenadas: " + latLng.toString(), Toast.LENGTH_SHORT).show();
+=======
         Toast.makeText(this, "Coordenadas: " + latLng.toString(), Toast.LENGTH_SHORT).show();
+>>>>>>> d15306316756a5f557957b267ef0717e66244e34
     }
 }

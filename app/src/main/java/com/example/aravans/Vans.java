@@ -1,8 +1,15 @@
 package com.example.aravans;
 
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.io.Serializable;
+import java.util.List;
 
 
 public class Vans implements Serializable {
@@ -16,7 +23,7 @@ public class Vans implements Serializable {
     private String percurso;
     private String horario;
 
-    public Vans(String foto,String placa, String ufPlaca, String responsavel, String origem, String destino, String percurso, String horario) {
+    public Vans(String foto, String placa, String ufPlaca, String responsavel, String origem, String destino, String percurso, String horario) {
         this.foto = foto;
         this.placa = placa;
         this.ufPlaca = ufPlaca;

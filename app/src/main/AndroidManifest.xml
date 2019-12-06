@@ -38,7 +38,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListaRotas" />
+        <activity android:name=".ListaRotasActivity" />
         <activity android:name=".CadastroVan" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -48,6 +48,8 @@
         android:name="android.hardware.camera"
         android:required="true" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 

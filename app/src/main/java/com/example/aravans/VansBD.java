@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class VansBD {
 
@@ -17,15 +18,6 @@ public class VansBD {
         conn = new Conexao(context);
         banco = conn.getWritableDatabase();
     }
-
-
-    public void adicionar(Vans vans) {
-        SQLiteDatabase db = conn.getWritableDatabase();
-
-        ContentValues dados = preencherDados(vans);
-
-       db.insert("VANS", null, dados);
-       db.close();
 
     public long inserir(Vans vans) {
 
@@ -40,6 +32,7 @@ public class VansBD {
         dados.put("PERCURSO", vans.getPercurso());
         dados.put("HORARIO", vans.getHorario());
         return banco.insert("vans",null, dados);
+
     }
 
 
@@ -62,13 +55,37 @@ public class VansBD {
     }
 
 
+    public List<Vans> listarVans() {
+        List<Vans> list = new ArrayList<>();
+
+        String sql = "SELECT * FROM VANS;";
+        SQLiteDatabase db = conn.getWritableDatabase();
+        Cursor cursor = db.rawQuery(sql, null);
+
+        while (cursor.moveToNext()){
+
+            String foto = cursor.getString(cursor.getColumnIndex("FOTO"));
+            String placa = cursor.getString(cursor.getColumnIndex("PLACA"));
+            String ufPlaca = cursor.getString(cursor.getColumnIndex("UFPLACA"));
+            String responsavel = cursor.getString(cursor.getColumnIndex("RESPONSAVEL"));
+            String origem = cursor.getString(cursor.getColumnIndex("ORIGEM"));
+            String destino = cursor.getString(cursor.getColumnIndex("DESTINO"));
+            String percurso = cursor.getString(cursor.getColumnIndex("PERCURSO"));
+            String horario = cursor.getString(cursor.getColumnIndex("HORARIO"));
+
+            list.add(new Vans(foto, placa, ufPlaca, responsavel, origem, destino, percurso, horario));
+        }
+
+        //Encerrar e liberar o cursor
+        cursor.close();
+        db.close();
+
+        return list;
+    }
 
     private ContentValues preencherDados(Vans vans) {
 
         ContentValues dados = new ContentValues();
-
-
-
         return dados;
     }
 

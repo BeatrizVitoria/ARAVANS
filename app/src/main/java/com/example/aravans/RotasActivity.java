@@ -40,7 +40,6 @@ import java.util.List;
 public class RotasActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMapClickListener {
 
     private GoogleMap mMap;
-    private ImageView imageViewFoto;
     LocationManager locationManager;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -49,29 +48,14 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rotas);
 
-        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA)!=
-                PackageManager.PERMISSION_GRANTED){ // checa a permissão no manifest
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 0);
-
-        }
-        ImageView imageViewFoto = findViewById(R.id.imageView);
-        Button btImage = findViewById(R.id.btImage);
-        btImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                tirarfoto();
-            }
-        });
-
-
 
         Button btCadastrar = findViewById(R.id.bt_cadastrar_principal);
-        btCadastrar.setOnClickListener( new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                 Intent intent = new Intent(RotasActivity.this, CadastroVan.class);
-                 startActivity(intent);
-                }
+        btCadastrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RotasActivity.this, CadastroVan.class);
+                startActivity(intent);
+            }
         });
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -222,22 +206,8 @@ public class RotasActivity extends FragmentActivity implements OnMapReadyCallbac
     }*/
     @Override
     public void onMapClick(LatLng latLng) {
-        Toast.makeText(this,"coordenadas:" + latLng.toString(), Toast.LENGTH_LONG).show();
-    }
-    public void tirarfoto(){
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(intent,1);
+        Toast.makeText(this, "coordenadas:" + latLng.toString(), Toast.LENGTH_LONG).show();
     }
 
-    @NonNull
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        if(requestCode == 1 && resultCode == RESULT_OK){
-            Bundle extras = data.getExtras();
-            Bitmap imagem = (Bitmap) extras.get("data");
-            imageViewFoto.setImageBitmap(imagem);
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-    }
-}
+
 }

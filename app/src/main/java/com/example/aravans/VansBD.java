@@ -4,14 +4,24 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class VansBD {
+public class VansBD{
 
     private Conexao conn; // atributo para a a classe conexao
     private SQLiteDatabase banco;
+
+    /*public void onCreate(Bundle a){
+        super.onCreate(a);
+        setContentView(R.layout.bd_teste);
+
+        listarVans();
+    }*/
 
     public VansBD(Context context) {
 
